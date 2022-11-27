@@ -96,6 +96,7 @@ def write_space_objects_data_to_file(output_filename, space_objects):
     with open(output_filename, 'w') as out_file:
         for obj in space_objects:
             obj_param_line = str(obj.type) + ' ' + str(obj.R)  + ' ' + str(obj.m) + ' ' + str(obj.color) + ' ' + str(obj.x) + ' ' + str(obj.y) + ' ' + str(obj.Vx) + ' ' + str(obj.Vy)
+            out_file.write(obj_param_line)
             print(out_file, "%s %d %s %f" % ('1', 2, '3', 4.5))
             out_file.flush()
 
