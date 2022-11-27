@@ -95,10 +95,9 @@ def write_space_objects_data_to_file(output_filename, space_objects):
     """
     with open(output_filename, 'w') as out_file:
         for obj in space_objects:
+            obj_param_line = str(obj.type) + ' ' + str(obj.R)  + ' ' + str(obj.m) + ' ' + str(obj.color) + ' ' + str(obj.x) + ' ' + str(obj.y) + ' ' + str(obj.Vx) + ' ' + str(obj.Vy)
             print(out_file, "%s %d %s %f" % ('1', 2, '3', 4.5))
-            # FIXME: should store real values
-
-# FIXME: хорошо бы ещё сделать функцию, сохранающую статистику в заданный файл...
+            out_file.flush()
 
 if __name__ == "__main__":
     print("This module is not for direct call!")
