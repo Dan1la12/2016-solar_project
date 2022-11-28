@@ -33,7 +33,7 @@ def read_space_objects_data_from_file(input_filename):
     return objects
 
 
-def parse_star_parameters(line, star):
+def parse_star_parameters(line, star_obj):
     """Считывает данные о звезде из строки.
     Входная строка должна иметь слеюущий формат:
     Star <радиус в пикселах> <цвет> <масса> <x> <y> <Vx> <Vy>
@@ -48,16 +48,16 @@ def parse_star_parameters(line, star):
     **star** — объект звезды.
     """
     star, R, color, m, x, y, Vx, Vy = line.split()
-    star.R = float(R)
-    star.m = float(m)
-    star.color = color
-    star.x = float(x)
-    star.y = float(y)
-    star.Vx = float(Vx)
-    star.Vy = float(Vy)
+    star_obj.R = float(R)
+    star_obj.m = float(m)
+    star_obj.color = color
+    star_obj.x = float(x)
+    star_obj.y = float(y)
+    star_obj.Vx = float(Vx)
+    star_obj.Vy = float(Vy)
 
 
-def parse_planet_parameters(line, planet):
+def parse_planet_parameters(line, planet_obj):
     """Считывает данные о планете из строки.
     Предполагается такая строка:
     Входная строка должна иметь слеюущий формат:
@@ -73,13 +73,13 @@ def parse_planet_parameters(line, planet):
     **planet** — объект планеты.
     """
     planet, R, color, m, x, y, Vx, Vy = line.split()
-    planet.R = float(R)
-    planet.m = float(m)
-    planet.color = color
-    planet.x = float(x)
-    planet.y = float(y)
-    planet.Vx = float(Vx)
-    planet.Vy = float(Vy)
+    planet_obj.R = float(R)
+    planet_obj.m = float(m)
+    planet_obj.color = color
+    planet_obj.x = float(x)
+    planet_obj.y = float(y)
+    planet_obj.Vx = float(Vx)
+    planet_obj.Vy = float(Vy)
 
 
 def write_space_objects_data_to_file(output_filename, space_objects):
